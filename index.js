@@ -105,3 +105,92 @@ function addEmployee() {
       });
   });
 }
+
+function addRole() {
+  connection.query('SELECT * FROM department', function (error, departments){
+inquier
+  .prompt([
+    {
+      type: 'text',
+      name: 'roleTitle',
+      message: 'What is the Title of this new Role?',
+    },
+    {
+      type: 'text',
+      name: 'roleSalary',
+      message: 'What is the Salary of this new Role?',
+    },
+    {
+      type: 'list',
+      name: 'roleDepartment',
+      choices: departments.map((department) => department.name),
+      message: 'What Department is the name of this new in?',
+      filter: function (choice) {
+        return departments.find((department) => department.name === choice).id;
+  },
+},
+])  
+  .then(function (res) {
+    const newRole = {
+      title: res.roleTitle,
+      salary: res.roleSalary,
+      department_id: res.roleDepartment,
+    };
+    connection.query(
+      'INSERT into role SET ?',
+      newRole,
+      function (error, data) {
+        console.table(data);
+        startPrompt();
+      });
+  });
+});
+}
+
+function addDepartment() {
+inquier
+  .prompt([
+    {
+      type: 'text',
+      name: 'name',
+      message: 'What is the name of this new department?',
+    },
+  ])
+  .then(function (res) {
+    connection.query(
+      'INSERT into Department (name) values(?)',
+      [res.name],
+      function (error, data) {
+        console.table(data);
+        startPrompt();
+      }
+    );
+  });
+}
+
+function updateEmployeerole() {
+inquier
+  .prompt([
+    {
+      type: 'text',
+      name: 'empid',
+      message:
+        'What is the employee id of the employee would you like to update?',
+    },
+    {
+      type: 'text',
+      name: 'roleid',
+      message: 'What is the new Role id?',
+    },
+  ])
+  .then(function (res) {
+    connection.query(
+      'UPDATE employee SET role_id = ? WHERE id = ?',
+      [res.roleid, res.empid],
+      function (error, data) {
+        console.table(data);
+        startPrompt();
+      }
+    );
+  });
+}
