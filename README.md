@@ -34,6 +34,7 @@
   ## Video
     
 ![](./assets/Employee%20tracker.gif)
+https://drive.google.com/file/d/1fV8K5VHvOXhU-dNK30QDw92kZZttFu-n/view?usp=sharing
   
   ## Special Thanks 
   Google\
