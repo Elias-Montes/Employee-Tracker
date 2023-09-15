@@ -34,3 +34,11 @@
   ## Video
 
   ## Special Thanks 
+  Google\
+  MDN docs\
+  Stack overflow\
+  Stack exchange\
+  Npmjs\
+  devhints.io/mysql\
+  dev.mysql.com\
+  veed.io
