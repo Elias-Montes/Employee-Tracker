@@ -6,9 +6,9 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
   * [Questions](#questions)
+  * [Video](#video)
+  * [Special Thanks](#special-thanks)
   
   ## Description:
 
@@ -32,7 +32,9 @@
   - Email: eliasmontes911@gmail.com
   
   ## Video
-
+    
+![](./assets/Employee%20tracker.gif)
+  
   ## Special Thanks 
   Google\
   MDN docs\
